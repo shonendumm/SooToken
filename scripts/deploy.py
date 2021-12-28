@@ -1,7 +1,9 @@
 from brownie import SooToken, network, config
 from scripts.helpful_scripts import get_account
+from web3 import Web3
 
-INITIAL_SUPPLY = 100*10**18 #100 SOO tokens minted
+INITIAL_SUPPLY = Web3.toWei(100, "ether")
+#100 SOO tokens minted
 # To override the decimal places, refer to
 # https://docs.openzeppelin.com/contracts/4.x/erc20#a-note-on-decimals
 
