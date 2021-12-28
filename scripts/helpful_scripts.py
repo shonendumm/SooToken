@@ -21,8 +21,9 @@ def get_account(index=None, id=None):
     ):
         return accounts[0]
     # using metamask wallet, private key added to .env file and referenced in brownie-config
-    return accounts.add(config["wallets"]["from_key"])
-
+    if network.show_active() in config["networks"]:
+        return accounts.add(config["wallets"]["from_key"])
+    return None
 
 
 
